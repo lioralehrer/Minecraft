@@ -1,0 +1,50 @@
+body{
+    background-color: skyblue;
+    background-image: url("../images/background.jpg");
+}
+
+.world{
+    margin: 0px;
+    padding: 0;
+}
+
+.tile{
+    display: inline-block;
+    width: 20px;
+    height:20px ;
+    background-color:white;
+    margin: 0px;
+    padding: 0;
+    
+}
+.side-bar{
+    background-color: rgb(46, 2, 2);
+    border: 5px solid rgb(15, 15, 15);
+    height: 550px;
+    
+}
+.tool{
+    height: 80px;
+    background-size:contain;
+    background-color: darkgoldenrod;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 5px;
+    padding: 2px;
+
+
+}
+.axe{
+    background-image: url("../images/Wooden_Axe.png");
+   
+   
+}
+.pickaxe{
+    background-image: url("../images/Iron_Pickaxe.png");
+ }
+ .shovel{
+    background-image: url("../images/Wooden_Shovel.png"); 
+ }
+ .space{
+     height: 80px;
+ }
