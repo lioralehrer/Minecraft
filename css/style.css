@@ -6,6 +6,7 @@ body{
 .world{
     margin: 0px;
     padding: 0;
+    background-color: skyblue;
 }
 
 .tile{
@@ -14,6 +15,7 @@ body{
     width: 20px;
     height:20px ;
     background-color:white;
+    border: 1px solid blue;
     margin: 0px;
     padding: 0;
     
