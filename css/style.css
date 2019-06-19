@@ -1,6 +1,6 @@
 body{
-    background-color: skyblue;
-    background-image: url("../images/background.jpg");
+    /* background-color: skyblue; */
+    /* background-image: url("../images/background.jpg"); */
 }
 
 .world{
@@ -15,7 +15,6 @@ body{
     float: left;
     width: 20px;
     height:20px ;
-    background-color:white;
     border: 1px solid blue;
     margin: 0px;
     padding: 0;
