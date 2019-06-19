@@ -1,7 +1,7 @@
-body{
+/* body{ 
     background-color: skyblue;
-    background-image: url("../images/background.jpg");
-}
+    
+ } */
 
 .world{
     margin: 0px;
@@ -15,7 +15,6 @@ body{
     float: left;
     width: 20px;
     height:20px ;
-    background-color:white;
     border: 1px solid blue;
     margin: 0px;
     padding: 0;
@@ -39,15 +38,15 @@ body{
 
 }
 .axe{
-    background-image: url("../images/Wooden_Axe.png");
+    background-image: url("../images/tools/Wooden_Axe.png");
    
    
 }
 .pickaxe{
-    background-image: url("../images/Iron_Pickaxe.png");
+    background-image: url("../images/tools/Iron_Pickaxe.png");
  }
  .shovel{
-    background-image: url("../images/Wooden_Shovel.png"); 
+    background-image: url("../images/tools/Wooden_Shovel.png"); 
  }
  .space{
      height: 80px;
