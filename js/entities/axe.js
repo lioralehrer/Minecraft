@@ -1,6 +1,7 @@
-class Axe{
+class Axe extends Tools{
     constructor(){
-        this.ablility = this.cuttingTrees();
+        super("axe",this.cuttingTrees());
+        
     }
     cuttingTrees(){
         // TODO
