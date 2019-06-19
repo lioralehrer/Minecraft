@@ -13,14 +13,22 @@ function pickTool() {
 }
 pickTool();
 
-$(`.tile`).click(function () { minechecker(e) });
+
+$(document).ready(function () {
+    $(".tile").click(function (e) {
+        console.log(`pressed tile id ${e.target.className}`);
+        minechecker(e);
+    });
+});
+
+// $(`.tile`).click(function () { minechecker(e) });
 //  check if tool can mine. if true:
 //  1) keep tile in storage()
 // 2) mine the tile()
 
 function minechecker(e) {
     // if current tool mutch his 'workOn' property
-    if (this.currentTool.workesOn[0] === e.target.data || this.currentTool.workesOn[1] === e.target.data) {
+    if (this.currentTool.workesOn[0] === e.target.className || this.currentTool.workesOn[1] === e.target.data) {
         //  $('div').attr('class').split(' ').pop();
         keeper = e.target.attr('class').split(' ').pop();
         console.log(keeper);
