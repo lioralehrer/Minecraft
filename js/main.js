@@ -11,7 +11,6 @@ function createEmptyTiles() {
             let tile = $("<div>");
             tile.addClass("tile");
             tile.attr("id", `x${j}y${i}`);
-            // tile.text(`x${i}y${j}`);
             tilesRow.append(tile);
         }
         world.append(tilesRow);
@@ -38,12 +37,12 @@ function createSquare(x, y, width, height, matter) {
     for (let i = y; i < y + height; i++) {
         console.log(i);
         for (let j = x; j < x + width; j++) {
-            $(`#x${j}y${i}`).css("background-image", `url("images/cell/${matter}.png")`);
+            $(`#x${j}y${i}`).addClass(matter);
         }
     }
 }
 
-createSquare(0, 20, 30, 10, "grass-earth"); //green earth
+createSquare(0, 20, 30, 10, "dirt"); //green earth
 createSquare(4, 16, 3, 4, "wood"); //green earth
 
 createSquare(18, 16, 3, 4, "rock");

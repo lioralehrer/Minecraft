@@ -1,7 +1,7 @@
-body{
-    /* background-color: skyblue; */
-    /* background-image: url("../images/background.jpg"); */
-}
+/* body{ 
+    background-color: skyblue;
+    
+ } */
 
 .world{
     margin: 0px;
@@ -39,16 +39,29 @@ body{
 
 }
 .axe{
-    background-image: url("../images/Wooden_Axe.png");
+    background-image: url("../images/tools/Wooden_Axe.png");
    
    
 }
 .pickaxe{
-    background-image: url("../images/Iron_Pickaxe.png");
+    background-image: url("../images/tools/Iron_Pickaxe.png");
  }
  .shovel{
-    background-image: url("../images/Wooden_Shovel.png"); 
+    background-image: url("../images/tools/Wooden_Shovel.png"); 
  }
  .space{
      height: 80px;
  }
+ .dirt{
+     background-image: url("../images/tiles/grass-earth.png");
+ }
+ .rock{
+     background-image: url("../images/tiles/stone.png");
+ }
+ .leaf{
+     background-image: url("../images/tiles/grass.png");
+ }
+ .wood{
+     background-image: url("../images/tiles/wood.jpg");
+ }
+ 
