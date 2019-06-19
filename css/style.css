@@ -7,7 +7,8 @@
     margin: 0px;
     padding: 0;
     background-color: skyblue;
-    width: 800px;
+    /* width: 800px; */
+    width: 600px;
 }
 
 .tile{

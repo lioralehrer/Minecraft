@@ -1,36 +1,49 @@
+const HEIGHT = 30;
+const WIDTH = 30;
+
 function createEmptyTiles() {
     let world = $(".world");
-    for (let i = 0; i < 1000; i++) {
-        let tile = $("<div>");
-        tile.addClass("tile");
-        tile.attr("id", `m${i}`);
-        world.append(tile);
-
+    for (let i = 0; i < HEIGHT; i++) {
+        let tilesRow = $("<div>");
+        tilesRow.addClass("tiles-row");
+        tilesRow.attr("id", `row${i}`);
+        for (let j = 0; j < WIDTH; j++) {
+            let tile = $("<div>");
+            tile.addClass("tile");
+            tile.attr("id", `x${j}y${i}`);
+            tilesRow.append(tile);
+        }
+        world.append(tilesRow);
     }
 }
+
+function drawIndexes() {
+    for (let i = 1; i < HEIGHT; i++) {
+        let tile = $(`#x0y${i}`);
+        tile.text(i);
+    }
+    for (let j = 0; j < WIDTH; j++) {
+        let tile = $(`#x${j}y0`);
+        tile.text(j);
+    }
+
+}
+
 createEmptyTiles();
+drawIndexes();
 
-function createEarth() {
-    for (let i = 600; i < 1000; i++) {
-        $(`#m${i}`).css("background-image", 'url("images/tiles/grass-earth.png")');
-        $(`#m${i}`).data("name", "dirt");
-    }
-
-}
-
-function createStem() {
-    let line = 40;
-    let width = 3;
-    let height = 5;
-
+function createSquare(x, y, width, height, matter) {
     let leap = 0;
-    for (let i = 427; i < 427+(height * line); i += line) {
+    for (let i = y; i < y + height; i++) {
         console.log(i);
-        for (let j = 0; j < width; j++) {
-            $(`#m${i + j}`).css("background-image", 'url("images/tiles/gold.png")');
+        for (let j = x; j < x + width; j++) {
+            $(`#x${j}y${i}`).addClass(matter);
         }
     }
 }
 
-createEarth();
-createStem();
+createSquare(0, 20, 30, 10, "dirt"); //green earth
+createSquare(4, 16, 3, 4, "wood"); //green earth
+
+createSquare(18, 16, 3, 4, "rock");
+
