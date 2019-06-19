@@ -13,6 +13,7 @@ createEmptyTiles();
 function createEarth() {
     for (let i = 600; i < 1000; i++) {
         $(`#m${i}`).css("background-image", 'url("images/tiles/grass-earth.png")');
+        $(`#m${i}`).data("name", "dirt");
     }
 
 }
