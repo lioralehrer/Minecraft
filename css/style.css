@@ -51,3 +51,16 @@
  .space{
      height: 80px;
  }
+ .dirt{
+     background-image: url("../images/tiles/grass-earth.png");
+ }
+ .rock{
+     background-image: url("../images/tiles/stone.png");
+ }
+ .leaf{
+     background-image: url("../images/tiles/grass.png");
+ }
+ .wood{
+     background-image: url("../images/tiles/wood.jpg");
+ }
+ 
