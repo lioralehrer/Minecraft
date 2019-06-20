@@ -1,8 +1,9 @@
-let tools = [new Axe(), new Pickaxe(), new Shovel()];
+let tools = [new Axe(), new Pickaxe(), new Shovel(), new BuildTile()];
 let currentTool = null;
 let keeper = null;
 let inventory = [];
-let builder = $("#keeper");
+let builder = $("#buildTile");
+let matter= null;
 // let classList = builder.attr("class").split(' ');
 
 
@@ -21,9 +22,10 @@ $("document").ready(function () {
     $(".tile").click(mine);
 
     function mine(e) {
-        let matter = e.target.className.split(' ').pop();
-        if (currentTool !== null) {
-            if (currentTool.worksOn[0] === matter) {
+        matter = e.target.className.split(' ').pop();
+        if ((currentTool !== null) && (currentTool.type !== BuildTile))   {
+           
+            if (currentTool.worksOn[0] === matter ) {
                 keeper = matter;
                 $(e.target).removeClass(matter);
             } else {
@@ -34,16 +36,26 @@ $("document").ready(function () {
             }
         }
 
-        if (keeper !== null && keeper === matter && (currentTool.worksOn[0] === matter || currentTool.worksOn[1] === matter)) {
+        if (keeper !== null && keeper === matter
+            && (currentTool.worksOn[0] === matter || currentTool.worksOn[1] === matter
+                && currentTool.type !== BuildTile)) {
             inventory.push(keeper);
             console.log(inventory);
-            let lastMatter = inventory[inventory.length - 1];
-            console.log("lastMatter is " + lastMatter);
+            // let lastMatter = inventory[inventory.length - 1];
+            // console.log("lastMatter is " + lastMatter);
             builder.removeClass();
-            builder.addClass(" build-tile  tool "+lastMatter);
+            builder.addClass(" buildTile  tool " + keeper);
         }
-             
+
+        if (currentTool.type === BuildTile) {
+            if (currentTool.worksOn[0] === matter) {
+                $(e.target).addClass(keeper);
+            }
+        }
+
     };
+
+
 
 
 });
