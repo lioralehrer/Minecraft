@@ -35,7 +35,6 @@ drawIndexes();
 function createSquare(x, y, width, height, matter) {
     let leap = 0;
     for (let i = y; i < y + height; i++) {
-        console.log(i);
         for (let j = x; j < x + width; j++) {
             $(`#x${j}y${i}`).addClass(matter);
         }
