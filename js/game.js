@@ -16,6 +16,9 @@ $("document").ready(function () {
             });
         }
     }
+    pickTool();
+
+    $(".tile").click(mine);
 
     function mine(e) {
         let matter = e.target.className.split(' ').pop();
@@ -41,6 +44,7 @@ $("document").ready(function () {
         }
              
     };
+
 
 });
 
