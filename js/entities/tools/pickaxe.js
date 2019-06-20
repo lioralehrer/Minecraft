@@ -1,6 +1,6 @@
 class Pickaxe extends Tool{
     constructor(){
-        super("pickaxe","rock");
+        super("pickaxe",["rock",""]);
     }
    
 }
