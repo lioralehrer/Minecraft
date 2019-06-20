@@ -7,7 +7,6 @@ function pickTool() {
             // change current tool
             currentTool = tools[i];
             console.log(currentTool);
-
         });
     }
 }
@@ -16,7 +15,7 @@ pickTool();
 
 $(document).ready(function () {
     $(".tile").click(function (e) {
-        console.log(`pressed tile id ${e.target.className}`);
+        console.log(`pressed tile- it's classes are: ${e.target.className}`);
         minechecker(e);
     });
 });
