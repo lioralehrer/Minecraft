@@ -26,7 +26,7 @@ $("document").ready(function () {
                 minecraft(e);
             }
             else {
-                console.log("inside work>else buildTile");
+                // console.log("inside work>else buildTile");
                 buildTile(e);
             }
         }
@@ -54,10 +54,16 @@ $("document").ready(function () {
     }
     function buildTile(e) {
         console.log("inside work>else buildTile");
-        let matter = e.target.className.split(' ').pop();
-        if (matter === "tile") {
-            $(e.target).addClass(inventory.pop());
-            inventory = [];
+        let empty = e.target.className.split(' ').pop();
+        if (empty === "tile") {
+            let stick= inventory.pop();
+            $(e.target).addClass(stick);
+            // $(e.target).addClass(inventory.pop());
+            // $(e.target).addClass(lastMatter);
+            // inventory.pop();
+            lastMatter = inventory[inventory.length - 1];
+            builder.removeClass();
+            builder.addClass(" build-tile  tool " + lastMatter);
         }
 
     }
