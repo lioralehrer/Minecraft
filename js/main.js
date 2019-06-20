@@ -30,7 +30,7 @@ function drawIndexes() {
 }
 
 function createSquare(x, y, width, height, matter) {
-    console.log(`createSquare(${x}, ${y}, ${width}, ${height}, ${matter})`);
+    // console.log(`createSquare(${x}, ${y}, ${width}, ${height}, ${matter})`);
     for (let i = y; i < y + height; i++) {
         for (let j = x; j < x + width; j++) {
             $(`#x${j}y${i}`)
@@ -43,7 +43,7 @@ function createSquare(x, y, width, height, matter) {
 function createTriangle(startX, startY, crossHeight, direction, matter) {
     let sign = (direction.toLowerCase() === "right") ? 1 : -1;
     for (let i = 0; i < crossHeight; i++) {
-        console.log(`createSquare(${startX + i}, ${startY + i}, 1, ${startY + i}, ${matter})`);
+        // console.log(`createSquare(${startX + i}, ${startY + i}, 1, ${startY + i}, ${matter})`);
         createSquare(startX + (sign * i), startY - i, 1, i + 1, matter);
     }
 }
