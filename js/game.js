@@ -1,6 +1,7 @@
 let tools = [new Axe(), new Pickaxe(), new Shovel()];
 let currentTool = null;
 let keeper = null;
+
 function pickTool() {
     for (let i = 0; i < tools.length; i++) {
         $(`#${tools[i].type}`).click(function () {
@@ -17,6 +18,9 @@ $(`.tile`).click(function () { minechecker(e) });
 //  check if tool can mine. if true:
 //  1) keep tile in storage()
 // 2) mine the tile()
+
+$(".tile").click(function(){console.log("tile clicked!")});
+
 
 function minechecker(e) {
     // if current tool mutch his 'workOn' property
