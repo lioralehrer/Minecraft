@@ -34,9 +34,10 @@ $("document").ready(function () {
             $(e.target).removeClass(keeper);
 
     }
-
-};
-console.log(keeper);
+    console.log(keeper);
 // change the keeper class:
 $("#keeper").addClass(keeper);
+
+};
+
 });
