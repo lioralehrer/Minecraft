@@ -4,6 +4,7 @@ let keeper = null;
 let matter;
 let inventory = [];
 let builder = $("#builder");
+let lastMatter = null;
 // let classList = builder.attr("class").split(' ');
 
 
@@ -46,27 +47,29 @@ $("document").ready(function () {
             inventory.push(keeper);
             console.log(inventory);
             lastMatter = inventory[inventory.length - 1];
-            console.log("lastMatter is " + lastMatter);
+            // console.log("lastMatter is " + lastMatter);
             builder.removeClass();
             builder.addClass(" build-tile  tool " + lastMatter);
         }
 
-    }
+    };
     function buildTile(e) {
-        console.log("inside work>else buildTile");
+        // console.log("inside work>else buildTile");
         let empty = e.target.className.split(' ').pop();
         if (empty === "tile") {
-            let stick= inventory.pop();
+            let stick = inventory.pop();
             $(e.target).addClass(stick);
-            // $(e.target).addClass(inventory.pop());
-            // $(e.target).addClass(lastMatter);
-            // inventory.pop();
             lastMatter = inventory[inventory.length - 1];
             builder.removeClass();
             builder.addClass(" build-tile  tool " + lastMatter);
         }
+    };
 
+    function makeInventory() {
+        let inventoryOrganize = inventory.toString();
+        $(".space").html(inventoryOrganize);
     }
-});
+    makeInventory();
 
+});
 
