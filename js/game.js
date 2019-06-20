@@ -4,7 +4,6 @@ let keeper = null;
 function pickTool() {
     for (let i = 0; i < tools.length; i++) {
         $(`#${tools[i].type}`).click(function () {
-            // change current tool
             currentTool = tools[i];
             console.log(currentTool);
 
@@ -12,20 +11,32 @@ function pickTool() {
     }
 }
 pickTool();
+$("document").ready(function () {
+    $(".tile").click(function (e) { minechecker(e) });
 
-$(`.tile`).click(function () { minechecker(e) });
-//  check if tool can mine. if true:
-//  1) keep tile in storage()
-// 2) mine the tile()
+    //  check if tool can mine. if true:
+    //  1) keep tile in storage()
+    // 2) mine the tile()
+    function minechecker(e) {
+        let matter = e.target.className.split(' ').pop();
+        console.log(matter);
+        console.log(currentTool.worksOn);
+        if (currentTool !== null) {
+            if (currentTool.worksOn === matter){
+                keeper = matter;
+            
+            // } else{
+            //     if(currentTool.worksOn[1] === matterClass) {
+            //         keeper = matter;            
+            //     }
+            }
+            
+            $(e.target).removeClass(keeper);
 
-function minechecker(e) {
-    // if current tool mutch his 'workOn' property
-    if (this.currentTool.workesOn[0] === e.target.data || this.currentTool.workesOn[1] === e.target.data) {
-        //  $('div').attr('class').split(' ').pop();
-        keeper = e.target.attr('class').split(' ').pop();
-        console.log(keeper);
-        e.target.siblings().removeClass(keeper);
     }
+
 };
+console.log(keeper);
 // change the keeper class:
-$("#keeper").addClass("keeper");
+$("#keeper").addClass(keeper);
+});
