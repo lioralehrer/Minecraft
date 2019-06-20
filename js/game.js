@@ -1,4 +1,4 @@
-let tools = [new Axe(), new Pickaxe(), new Shovel(),new Builder()];
+let tools = [new Axe(), new Pickaxe(), new Shovel(), new Builder()];
 let currentTool = null;
 let keeper = null;
 let matter;
@@ -52,75 +52,14 @@ $("document").ready(function () {
         }
 
     }
-    function buildTile(e){
+    function buildTile(e) {
         console.log("inside work>else buildTile");
         let matter = e.target.className.split(' ').pop();
-        if (matter === "tile" ){
+        if (matter === "tile") {
             $(e.target).addClass(inventory.pop());
+            inventory = [];
         }
 
     }
-
-    // function mine(e) {
-    //     let matter = e.target.className.split(' ').pop();
-    //     if (currentTool !== null) {
-
-    //         if (currentTool.worksOn[0] === matter) {
-    //             keeper = matter;
-    //             $(e.target).removeClass(matter);
-    //         } else {
-    //             if (currentTool.worksOn[1] === matter) {
-    //                 keeper = matter;
-    //                 $(e.target).removeClass(matter);
-    //             }
-    //         }
-    //     }
-
-    //     if (keeper !== null && keeper === matter && (currentTool.worksOn[0] === matter || currentTool.worksOn[1] === matter)) {
-    //         inventory.push(keeper);
-    //         console.log(inventory);
-    //          lastMatter = inventory[inventory.length - 1];
-    //         console.log("lastMatter is " + lastMatter);
-    //         builder.removeClass();
-    //         builder.addClass(" build-tile  tool "+lastMatter);
-    //     }
-
-    // };
-    // function mine(e) {
-
-
-    //     if ((currentTool !== null) && (currentTool.type !== "builder"))   {
-    //         matter = e.target.className.split(' ').pop();
-    //         if (currentTool.worksOn[0] === matter) {
-    //             keeper = matter;
-    //             $(e.target).removeClass(matter);
-    //         } else {
-    //             if (currentTool.worksOn[1] === matter) {
-    //                 keeper = matter;
-    //                 $(e.target).removeClass(matter);
-    //             }
-    //         }
-    //     }
-
-    //     if (keeper !== null && keeper === matter
-    //         && (currentTool.worksOn[0] === matter || currentTool.worksOn[1] === matter
-    //             && currentTool.type !== "builder")) {
-    //         inventory.push(keeper);
-    //         console.log(inventory);
-    //         // let lastMatter = inventory[inventory.length - 1];
-    //         // console.log("lastMatter is " + lastMatter);
-    //         builder.removeClass();
-    //         builder.addClass(" buildTile  tool " + keeper);
-    //     }
-
-    //     if (currentTool.type === "builder") {
-    //         if (currentTool.worksOn[0] === matter) {
-    //             $(e.target).addClass(keeper);
-    //         }
-    //     }
-
-    // };
-
-
 });
 
