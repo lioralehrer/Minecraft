@@ -1,5 +1,13 @@
+// const HEIGHT = 30;
+// const WIDTH = 30;
+
+const WORLD_WIDTH = "600px"
+const TILE_SIZE = "20px"
 const HEIGHT = 30;
 const WIDTH = 30;
+
+$(".world").css("width", WORLD_WIDTH);
+$(".tile").css("width", WORLD_WIDTH);
 
 function createEmptyTiles() {
     let world = $(".world");
