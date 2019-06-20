@@ -54,15 +54,30 @@
      height: 80px;
  }
  .dirt{
-     background-image: url("../images/tiles/grass-earth.png");
+     background-image: url("../images/tiles/dirt.png");
+     background-size: contain;
  }
+ .grass{
+    background-image: url("../images/tiles/grass.png");
+    background-size: contain;
+}
  .rock{
-     background-image: url("../images/tiles/stone.png");
+     background-image: url("../images/tiles/rock.png");
+     background-size: contain;
+ }
+ .gold{
+     background-image: url("../images/tiles/gold.png");
+     background-size: contain;
+ }
+ .cloud{
+     background-image: url("../images/tiles/cloud.png");
+     background-size: contain;
  }
  .leaf{
      background-image: url("../images/tiles/grass.png");
  }
  .wood{
      background-image: url("../images/tiles/wood.jpg");
+     background-size: contain;
  }
  

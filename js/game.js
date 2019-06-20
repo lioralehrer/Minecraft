@@ -43,3 +43,23 @@ $("document").ready(function () {
 
 
 });
+
+// $(`.tile`).click(function () { minechecker(e) });
+// //  check if tool can mine. if true:
+// //  1) keep tile in storage()
+// // 2) mine the tile()
+
+// $(".tile").click(function(){console.log("tile clicked!")});
+
+
+// function minechecker(e) {
+//     // if current tool mutch his 'workOn' property
+//     if (this.currentTool.workesOn[0] === e.target.data || this.currentTool.workesOn[1] === e.target.data) {
+//         //  $('div').attr('class').split(' ').pop();
+//         keeper = e.target.attr('class').split(' ').pop();
+//         console.log(keeper);
+//         e.target.siblings().removeClass(keeper);
+//     }
+// };
+// // change the keeper class:
+// $("#keeper").addClass("keeper");
