@@ -56,6 +56,24 @@ function createTriangle(startX, startY, crossHeight, direction, matter) {
     }
 }
 
+function canBuild(x, y) {
+    let x1 = x - 1;
+    let y1 = y - 1;
+    for (let i = y1; i < y1 + 3; i++) {
+        for (let j = x1; j < x1 + 3; j++) {
+            let neighbourTile = $(`#x${j}y${i}`);
+            console.log(`neighbourTile = ${neighbourTile}`);
+            console.log(`neighbourTile.className = ${neighbourTile.className}`);
+            console.log(`neighbourTile.attr("class") = ${neighbourTile.attr("class")}`);
+            if ((neighbourTile.attr("class") !== "tile") && ((i !== y) && (j !== x))) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
 createEmptyTiles();
 drawIndexes();
 

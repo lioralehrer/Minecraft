@@ -55,7 +55,10 @@ $("document").ready(function () {
     function buildTile(e) {
         console.log("inside work>else buildTile");
         let matter = e.target.className.split(' ').pop();
-        if (matter === "tile") {
+        let tileIndexY = e.target.id.split("y").pop();
+        let tileIndexX = e.target.id.split("x")[1].split("y").shift();
+        console.log(`x = ${tileIndexX} y = ${tileIndexY}`);
+        if ((matter === "tile") && (canBuild(tileIndexX, tileIndexY))) {
             $(e.target).addClass(inventory.pop());
             inventory = [];
         }
