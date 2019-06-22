@@ -28,11 +28,11 @@ function createEmptyTiles() {
 function drawIndexes() {
     for (let i = 1; i < HEIGHT; i++) {
         let tile = $(`#x0y${i}`);
-        tile.text(i);
+        // tile.text(i);
     }
     for (let j = 0; j < WIDTH; j++) {
         let tile = $(`#x${j}y0`);
-        tile.text(j);
+        // tile.text(j);
     }
 
 }
@@ -65,7 +65,7 @@ function canBuild(x, y) {
             console.log(`neighbourTile = ${neighbourTile}`);
             console.log(`neighbourTile.className = ${neighbourTile.className}`);
             console.log(`neighbourTile.attr("class") = ${neighbourTile.attr("class")}`);
-            if ((neighbourTile.attr("class") !== "tile") && ((i !== y) && (j !== x))) {
+            if ((neighbourTile.attr("class") !== "tile") && (neighbourTile.attr("class") !== "tile cloud") && ((i !== y) && (j !== x))) {
                 return true;
             }
         }
@@ -73,6 +73,22 @@ function canBuild(x, y) {
     return false;
 }
 
+function canMine(x, y) {
+    let x1 = x - 1;
+    let y1 = y - 1;
+    for (let i = y1; i < y1 + 3; i++) {
+        for (let j = x1; j < x1 + 3; j++) {
+            let neighbourTile = $(`#x${j}y${i}`);
+            console.log(`neighbourTile = ${neighbourTile}`);
+            console.log(`neighbourTile.className = ${neighbourTile.className}`);
+            console.log(`neighbourTile.attr("class") = ${neighbourTile.attr("class")}`);
+            if ((neighbourTile.attr("class") === "tile") && ((i !== y) && (j !== x))) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 createEmptyTiles();
 drawIndexes();
