@@ -25,16 +25,23 @@ body{
 .side-bar{
     background-color: rgb(46, 2, 2);
     border: 5px solid rgb(15, 15, 15);
-    height: 550px;
-    
+    height: 600px;   
 }
+<<<<<<< HEAD
 .tool{
     height: 80px;
     width: 100%;
+=======
+
+.tool, .inventory{
+    width: 100%;
+    height: 105px;
+>>>>>>> 5b86c396773f4dbb4425a236a3e54e7ac098e0e9
     background-size:contain;
     background-color: darkgoldenrod;
     background-repeat: no-repeat;
     background-position: center;
+<<<<<<< HEAD
     margin: 5px;
     padding: 2px;
     text-align: left;
@@ -45,6 +52,13 @@ body{
 .toggle{
     background-color: blue;
 }
+=======
+    margin-top: 10px;
+    padding: 3px;
+    color: white;
+}
+
+>>>>>>> 5b86c396773f4dbb4425a236a3e54e7ac098e0e9
 .axe{
     background-image: url("../images/tools/Wooden_Axe.png");
     
@@ -88,3 +102,14 @@ body{
      background-size: contain;
  }
  
+ #inventory-list{
+    margin:0;
+    padding:0;
+    color: white;
+    vertical-align:top;
+    display:inline-block;
+    width: 84px;
+    word-wrap:break-word;
+    font-size:12px;
+     
+}

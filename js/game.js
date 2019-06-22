@@ -4,7 +4,8 @@ let keeper = null;
 let matter;
 let inventory = [];
 let builder = $("#builder");
-// let classList = builder.attr("class").split(' ');
+let lastMatter = null;
+
 
 
 
@@ -27,7 +28,6 @@ $("document").ready(function () {
                 minecraft(e);
             }
             else {
-                console.log("inside work>else buildTile");
                 buildTile(e);
             }
         }
@@ -45,23 +45,26 @@ $("document").ready(function () {
         }
         if (keeper !== null && keeper === matter && (currentTool.worksOn[0] === matter || currentTool.worksOn[1] === matter)) {
             inventory.push(keeper);
-            console.log(inventory);
+            $("#inventory-list").text(inventory.join(" "));
             lastMatter = inventory[inventory.length - 1];
-            console.log("lastMatter is " + lastMatter);
             builder.removeClass();
             builder.addClass(" build-tile  tool " + lastMatter);
         }
 
-    }
+    };
     function buildTile(e) {
-        console.log("inside work>else buildTile");
-        let matter = e.target.className.split(' ').pop();
-        if (matter === "tile") {
-            $(e.target).addClass(inventory.pop());
-            inventory = [];
+        let empty = e.target.className.split(' ').pop();
+        if (empty === "tile") {
+            let stick = inventory.pop();
+            $("#inventory-list").text(inventory.join(" "));  
+            $(e.target).addClass(stick);
+            lastMatter = inventory[inventory.length - 1];
+            builder.removeClass();
+            builder.addClass(" build-tile  tool " + lastMatter);
         }
 
-    }
-});
+    };
 
+
+});
 
