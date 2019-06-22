@@ -6,6 +6,10 @@
     /* width: 800px; */
     width: 600px;
 }
+body{
+    background-image: url("../images/background/minecraft_screen6.png");
+    background-size: cover;
+}
 
 .tile{
     display: block;
@@ -26,17 +30,24 @@
 }
 .tool{
     height: 80px;
+    width: 100%;
     background-size:contain;
     background-color: darkgoldenrod;
     background-repeat: no-repeat;
     background-position: center;
     margin: 5px;
     padding: 2px;
+    text-align: left;
+    
 
 
 }
+.toggle{
+    background-color: blue;
+}
 .axe{
     background-image: url("../images/tools/Wooden_Axe.png");
+    
    
    
 }
