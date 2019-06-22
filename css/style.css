@@ -42,10 +42,7 @@ body{
 }
 
 .axe{
-    background-image: url("../images/tools/Wooden_Axe.png");
-    
-   
-   
+    background-image: url("../images/tools/Wooden_Axe.png");   
 }
 .pickaxe{
     background-image: url("../images/tools/Iron_Pickaxe.png");
@@ -90,7 +87,7 @@ body{
     color: white;
     vertical-align:top;
     display:inline-block;
-    width: 84px;
+    width: 130px;
     word-wrap:break-word;
     font-size:12px;
      
