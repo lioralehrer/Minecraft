@@ -20,11 +20,11 @@ function createEmptyTiles() {
 function drawIndexes() {
     for (let i = 1; i < HEIGHT; i++) {
         let tile = $(`#x0y${i}`);
-        tile.text(i);
+        // tile.text(i);
     }
     for (let j = 0; j < WIDTH; j++) {
         let tile = $(`#x${j}y0`);
-        tile.text(j);
+        // tile.text(j);
     }
 
 }
