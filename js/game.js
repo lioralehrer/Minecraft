@@ -15,11 +15,12 @@ $("document").ready(function () {
         for (let i = 0; i < tools.length; i++) {
             $(`#${tools[i].type}`).click(function () {
                 currentTool = tools[i];
+                
             });
         }
     }
     pickTool();
-
+  
     $(".tile").click(work);
     function work(e) {
         if (currentTool !== null) {

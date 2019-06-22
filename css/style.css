@@ -6,6 +6,10 @@
     /* width: 800px; */
     width: 600px;
 }
+body{
+    background-image: url("../images/background/minecraft_screen6.png");
+    background-size: cover;
+}
 
 .tile{
     display: block;
@@ -34,12 +38,11 @@
     margin-top: 10px;
     padding: 3px;
     color: white;
+    text-align: left;
 }
 
 .axe{
-    background-image: url("../images/tools/Wooden_Axe.png");
-   
-   
+    background-image: url("../images/tools/Wooden_Axe.png");   
 }
 .pickaxe{
     background-image: url("../images/tools/Iron_Pickaxe.png");
@@ -84,7 +87,7 @@
     color: white;
     vertical-align:top;
     display:inline-block;
-    width: 84px;
+    width: 130px;
     word-wrap:break-word;
     font-size:12px;
      
