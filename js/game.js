@@ -8,7 +8,6 @@ let lastMatter = null;
 
 
 
-
 $("document").ready(function () {
 
     function pickTool() {
@@ -36,7 +35,7 @@ $("document").ready(function () {
         let matter = e.target.className.split(' ').pop();
         let tileIndexY = e.target.id.split("y").pop();
         let tileIndexX = e.target.id.split("x")[1].split("y").shift();
-        console.log(`x = ${tileIndexX} y = ${tileIndexY}`);
+       
         if (canMine(tileIndexX, tileIndexY)) {
             if (currentTool.worksOn[0] === matter) {
                 keeper = matter;
@@ -62,7 +61,7 @@ $("document").ready(function () {
         let empty = e.target.className.split(' ').pop();
         let tileIndexY = e.target.id.split("y").pop();
         let tileIndexX = e.target.id.split("x")[1].split("y").shift();
-        console.log(`x = ${tileIndexX} y = ${tileIndexY}`);
+   
         if ((empty === "tile") && (canBuild(tileIndexX, tileIndexY))) {
             let stick = inventory.pop();
             $("#inventory-list").text(inventory.join(" "));

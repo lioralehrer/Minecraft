@@ -38,7 +38,6 @@ function drawIndexes() {
 }
 
 function createSquare(x, y, width, height, matter) {
-    // console.log(`createSquare(${x}, ${y}, ${width}, ${height}, ${matter})`);
     for (let i = y; i < y + height; i++) {
         for (let j = x; j < x + width; j++) {
             $(`#x${j}y${i}`)
@@ -51,7 +50,6 @@ function createSquare(x, y, width, height, matter) {
 function createTriangle(startX, startY, crossHeight, direction, matter) {
     let sign = (direction.toLowerCase() === "right") ? 1 : -1;
     for (let i = 0; i < crossHeight; i++) {
-        // console.log(`createSquare(${startX + i}, ${startY + i}, 1, ${startY + i}, ${matter})`);
         createSquare(startX + (sign * i), startY - i, 1, i + 1, matter);
     }
 }
@@ -62,9 +60,7 @@ function canBuild(x, y) {
     for (let i = y1; i < y1 + 3; i++) {
         for (let j = x1; j < x1 + 3; j++) {
             let neighbourTile = $(`#x${j}y${i}`);
-            console.log(`neighbourTile = ${neighbourTile}`);
-            console.log(`neighbourTile.className = ${neighbourTile.className}`);
-            console.log(`neighbourTile.attr("class") = ${neighbourTile.attr("class")}`);
+
             if ((neighbourTile.attr("class") !== "tile") && (neighbourTile.attr("class") !== "tile cloud") && ((i !== y) && (j !== x))) {
                 return true;
             }
@@ -79,9 +75,7 @@ function canMine(x, y) {
     for (let i = y1; i < y1 + 3; i++) {
         for (let j = x1; j < x1 + 3; j++) {
             let neighbourTile = $(`#x${j}y${i}`);
-            console.log(`neighbourTile = ${neighbourTile}`);
-            console.log(`neighbourTile.className = ${neighbourTile.className}`);
-            console.log(`neighbourTile.attr("class") = ${neighbourTile.attr("class")}`);
+
             if ((neighbourTile.attr("class") === "tile") && ((i !== y) && (j !== x))) {
                 return true;
             }
